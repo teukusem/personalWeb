@@ -1,0 +1,9 @@
+.up-detail {
+  text-align: center;
+  padding: 30px;
+}
+
+.icon-logo {
+  display: flex;
+  flex-direction: column;
+}

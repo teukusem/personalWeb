@@ -1,0 +1,25 @@
+.add-project-form {
+  width: 400px;
+  margin: 50px auto;
+}
+
+.date {
+  display: flex;
+  gap: 15px;
+}
+
+.check-flex {
+  display: flex;
+}
+
+.form-check {
+  margin-right: 30px;
+}
+
+.check-flex.px-5 {
+  justify-content: space-around;
+}
+
+.btn.btn-dark {
+  margin-left: 300px;
+}

@@ -1,0 +1,142 @@
+<html>
+    <head>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+      <div class="container-fluid">
+        <img
+          src="https://www.dumbways.id/assets/images/brandred.png"
+          alt="logo.png"
+          class="img-nav"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/add">Add Project</a>
+            </li>
+          </ul>
+
+            {{#if isLogin}}
+              <a href="#" class="btn btn-text-black me-4">Hello, {{user.name}}</a>
+              <a href="/logout" class="btn btn-text-danger me-4">Logout</a>
+              {{else}}
+               <a href="/register" class="btn btn-text-black me-4">Register</a>
+              <a href="/login" class="btn btn-text-black me-4">Login</a>
+              {{/if}}
+              <a href="/contact" class="btn btn-outline-dark" type="submit">ContactMe</a>
+        </div>
+      </div>
+    </nav>
+    {{#if messages.succes}}
+        <div class="alert alert-info" role="alert">
+          {{messages.succes}}
+        </div>
+      {{/if}}
+          <!-- =================card==================== -->
+     <section class="section-card">
+      <div class="section-left">
+        <h3>Hi Welcome to my hut!</h3>
+        <text class="text-section">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+          maiores quas quis perferendis consequatur, ad cumque necessitatibus,
+          ex cum, esse dolore nostrum fugit architecto. Quis, illum? Voluptatem
+          facere corrupti quidem! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Illo, doloribus alias odio, a, molestiae nihil
+          cumque aut aliquam consequuntur dolor distinctio nesciunt repudiandae
+          quod ut quidem tenetur! Maxime, in modi?
+        </text>
+        <div class="button-card">
+          <a href="/contact"class="link-card">
+            <button type="button" class="btn btn-dark">Contact</button>
+          </a>
+          <a href="#" class="link-card">
+            <button type="button" class="btn btn-link">download Cv   
+              <i class='bx bx-download'></i>
+            </button> 
+          </a>
+        </div>
+
+        <div class="logo-sosmed-card" >
+          <i class='bx bxl-twitter'></i>
+          <i class='bx bxl-facebook-circle' ></i>
+          <i class='bx bxl-linkedin-square' ></i>
+          <i class='bx bxl-instagram-alt' ></i>
+        </div>
+        </div>
+      </div>
+      <div class="section-right">
+        <div class="card-profile">
+          <div class="card-person">
+            <img
+              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="person-image"
+              style="border-radius: 10px; width: 250px; height: 250px;"
+            />
+            <h3>Teuku Sem</h3>
+            <p>Fullstack Enginer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================Project Card=================== -->  
+    <div style="flex-wrap: wrap;">
+      <h2 class="border-project">MY PROJECT</h2>
+      {{!-- ==============card============== --}}
+      <div class="px-5 d-flex" style="flex-wrap: wrap; margin: 100px;">
+      {{#each blog}}
+        <div class="card me-5" style="width: 18rem; margin-top: 10px">
+          <img src="/uploads/{{this.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p style="font-size: 10px;">{{this.duration}}|| {{this.author_id}}</p>
+            <a href="/detail/{{this.id}}" target="_blank" class="text-detail">
+            <p class="card-text">{{this.desc}}</p>
+            </a>
+
+            {{#if vue}}
+            <i class='bx bxl-vuejs'  ></i>
+            {{/if}}
+            {{#if react}}
+             <i class='bx bxl-react' ></i>
+             {{/if}}
+             {{#if node}}
+             <i class='bx bxl-nodejs' ></i>
+             {{/if}}
+             {{#if java}}
+             <i class='bx bxl-javascript' ></i>
+             {{/if}}
+
+       
+            {{#if isLogin}}
+              <div class="d-flex" style="gap: 20px; padding-top: 10px">
+                <a href="/edit/{{this.id}}" class="btn btn-dark">edit</a>
+                <a href="/delete/{{this.id}}" class="btn btn-dark">delete</a>
+              </div>
+            {{/if}}
+
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </body>
+</html>

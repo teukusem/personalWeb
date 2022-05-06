@@ -1,0 +1,84 @@
+.logo-dumbways {
+  height: 10vh;
+  width: auto;
+  padding-right: 15px;
+}
+
+.section-card {
+  margin: 100px;
+  padding: 50px;
+  background-color: white;
+  height: 65vh;
+  box-shadow: 8px 8px 18px gray;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+}
+
+.link-card {
+  text-decoration: none;
+}
+
+.img-nav {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.text-section {
+  text-align: justify;
+  display: flex;
+}
+
+.card-person {
+  box-shadow: 0px 0px 15px rgb(66, 66, 66);
+  width: fit-content;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.card-profile {
+  text-align: center;
+  margin-left: 40px;
+}
+
+.logo-sosmed-card {
+  margin: 25px;
+  font-size: 40px;
+}
+
+.button-card {
+  margin-top: 20px;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: black;
+}
+.btn.btn-dark {
+  padding: 5px 20px;
+  border-radius: 25px;
+}
+
+.border-project {
+  text-align: center;
+  padding: 30px;
+}
+
+.px-5.page-project {
+  display: flex;
+}
+
+.btn.btn-dark {
+  border: none;
+  color: white;
+  padding: 5px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.text-detail {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
